@@ -13,11 +13,9 @@ RUN apt-get install -y \
     libavutil-dev \
     libavformat-dev \
     libavcodec-dev
-RUN add-apt-repository ppa:stebbins/handbrake-releases
-RUN apt-get update
-RUN apt-get install handbrake-cli
+RUN add-apt-repository ppa:stebbins/handbrake-releases && RUN apt-get update
+RUN apt-get install handbrake-cli -y
 RUN  mv Comskip/comcut /usr/local/bin/comcut
 RUN chmod +x /usr/local/bin/comcut
- 
 RUN git clone https://github.com/erikkaashoek/Comskip.git
 RUN cd Comskip && ./autogen.sh && ./configure && make && make install
