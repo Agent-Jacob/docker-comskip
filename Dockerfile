@@ -14,6 +14,7 @@ RUN apt-get install -y \
     libavformat-dev \
     libavcodec-dev
 RUN add-apt-repository ppa:stebbins/handbrake-releases
+RUN apt-get update
 RUN apt-get install handbrake-cli
 RUN  mv Comskip/comcut /usr/local/bin/comcut
 RUN chmod +x /usr/local/bin/comcut
